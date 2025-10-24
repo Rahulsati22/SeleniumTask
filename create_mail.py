@@ -27,20 +27,23 @@ def send_simple_email():
 def send_html_email():
     subject = "Welcome!"
     html_content = """
-    <h2>Hello from Django</h2>
-    <p>This is an <b>HTML email</b> sent using Gmail SMTP.</p>
+    <h2>Image Link -> (https://drive.google.com/file/d/1GNdkUrEkQuLapItjbv54qKjQhpKZBY9L/view?usp=sharing)</h2>
+    <p>Source Code -> (https://github.com/Rahulsati22/SeleniumTask/tree/main)</p>
+    <p>Approach -> (Firstly i inspected the code for google drive where i noticed each of the input tag has the same class name and the address field has different classname. So i targeted the class wrote down my input values and then using selenium went to the targeted website and filled all the values. After that I targeted the button with the text->Submit and then clicked on the button using selenium. After that i used django to send the email to the required user.)</p>
+    <p>Resume Link -> (https://drive.google.com/file/d/1mpr5M5nCDwW7ZbGhnWDCEPwekBKCErbz/view?usp=sharing)</p>
+    <p>Portfolio Link -> (https://portfolio-new-six-delta.vercel.app/)</p>
+    <p>Yes i am available to work anytime</p>
     """
     email = EmailMessage(
         subject,
         html_content,
         settings.EMAIL_HOST_USER,
-        ['recipient@example.com']
+        ['rahulsati2003@gmail.com']
     )
     email.content_subtype = "html"
     email.send()
     print("✅ HTML email sent successfully!")
 
 if __name__ == "__main__":
-    send_simple_email()
+    # send_simple_email()
     send_html_email()
-
